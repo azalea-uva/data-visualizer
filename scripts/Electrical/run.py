@@ -27,7 +27,7 @@ plt.rcParams["axes.linewidth"] = style["axes_linewidth"]
 # TODO: Change experiment name and filenames
 # Transfer curves
 # Experiment Name
-experiment_name: str = "AL_1_35L"
+experiment_name: str = "AU-054-B"
 
 # Result path
 result_path: Path = root_path / "results" / "Electrical" / experiment_name
@@ -38,31 +38,25 @@ data_dir: Path = root_path / "data" / "Electrical" / experiment_name
 # Filenames
 # TODO: add filenames and add corresponding (excel sheet) tabs into the dictionary (keys for filename, and values for sheet names)
 transfer_curve_data_filenames: dict = {
-    "2024_05_07_AL_1_35L_1A_3.xls": ["AL_1_35L_1A_3"]
+   "2024-12-04-vgs-id_2-Transfer Curve_AU-054-B.xls": ["AU-054-B-1A","AU-054-B-1B","AU-054-B-1C", "AU-054-B-2A", "AU-054-B-3A", "AU-054-B-4A", "AU-054-B-5A","AU-054-B-6A"]
 }
 
 # Output curve filename
 output_curve_data_filenames: dict = {
-    "2024_05_07_OC_AL_1_35L_1A_1.xls": ["OC_AL_1_35L_1A_1"]
+    "2024-12-04-vds-id-Output Curve_AU-054-B.xls": ["AU-054-B-1A", "AU-054-B-3A", "AU-054-B-4A", "AU-054-B-5A", "AU-054-B-6A"]
 }
-
 # Overlay data directory path
 overlay_data_dir: Path = root_path / "data" / "Electrical"
 
 # Overlay result directory path
 overlay_result_dir: Path = root_path / "results" / "Electrical"
-# Overlay curve filenames
-# 1 sheet per line in the dictionary (item is not a list but a string)
-overlay_transfer_curve_data_filenames: dict = {
-    "AL_1_35L/2024_05_07_AL_1_35L_1A_3.xls": "AL_1_35L_1A_3",
-    "AL_1_33C/2024_05_13_AL_1_33C_1A_D_all.xls": "AL_1_33C_1D_1",
-}
 
-# Molecular Weight Data
-mw_data_filepath: Path = root_path / "data" / "Electrical" / "MW" / "MW_data.csv"
 
-# Molecular Weight Result Path
-mw_result_path: Path = root_path / "results" / "Electrical" / "MW"
+# # Molecular Weight Data
+# mw_data_filepath: Path = root_path / "data" / "Electrical" / "MW" / "MW_data.csv"
+
+# # Molecular Weight Result Path
+# mw_result_path: Path = root_path / "results" / "Electrical" / "MW"
 
 if __name__ == "__main__":
     # Transfer Curves
@@ -118,6 +112,7 @@ if __name__ == "__main__":
                 ]
             )
 
+<<<<<<< Updated upstream
     # Overlay Transfer Curves
     # NOTE: specify name of overlay transfer curves
     overlay_transfer_curve_name: str = "IDT-BT_IDT-TPD"
@@ -131,6 +126,21 @@ if __name__ == "__main__":
     plot.plot_overlay_transfer_curve(
         labels=["IDT-BT", "IDT-TPD"], color_order=["blue", "yellow"]
     )
+=======
+    # # Overlay Transfer Curves
+    # # NOTE: specify name of overlay transfer curves
+    # overlay_transfer_curve_name: str = "IDT-BT_IDT-TPD"
+    # plot = OverlayTransferCurves(
+    #     overlay_transfer_curve_data_filenames,
+    #     overlay_data_dir,
+    #     overlay_result_dir,
+    #     overlay_transfer_curve_name,
+    #     style_path,
+    # )
+    # plot.plot_overlay_transfer_curve(
+    #     ["IDT-BT", "IDT-TPD"], color_order=["blue", "yellow"]
+    # )
+>>>>>>> Stashed changes
 
     # Molecular Weight Plots
     # plot = MW_Curves(mw_data_filepath, mw_result_path, style_path)
