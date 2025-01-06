@@ -740,7 +740,7 @@ class OutputCurve:
         self,
         xlim: tuple = (-80, 0),
         annotate_x: float = -40,
-        num_of_annotate: int = 5,
+        num_of_annotate: int = 4,
         color_order: list["str"] = [
             "green_blue_1",
             "green_blue_2",
@@ -752,6 +752,8 @@ class OutputCurve:
             "green_blue_8",
             "green_blue_9",
             "green_blue_10",
+            "green_blue_11",
+            "green_blue_12",
         ],
     ):
         """
@@ -822,7 +824,7 @@ class OutputCurve:
         ax.yaxis.major.formatter._useMathText = True
         # NOTE: User can change the x and y limits here
         plt.ylim(
-            0.5e-09,1.25e-09
+            0,0.7e-09
         )
         # Save the figure
         # NOTE: User can change the filename
