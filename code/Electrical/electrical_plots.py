@@ -740,7 +740,7 @@ class OutputCurve:
         self,
         xlim: tuple = (-80, 0),
         annotate_x: float = -30,
-        num_of_annotate: int = 5,
+        num_of_annotate: int = 4,
         color_order: list["str"] = [
             "green_blue_1",
             "green_blue_2",
@@ -763,10 +763,10 @@ class OutputCurve:
             num_of_annotate (int): number of plots to annotate (starting from the last one or the one with lowest V_G (i.e. -80V))
         """
         # Find all the columns with "DrainV("", and then plot them all
-        num_of_output_curves = 1
+        num_of_output_curves = 5
         for column in self.data.columns:
             if "DrainV(" in column:
-                num_of_output_curves += 1
+                num_of_output_curves += 5
         # Check if there are enough colors
         assert (
             len(color_order) >= num_of_output_curves
@@ -820,10 +820,10 @@ class OutputCurve:
         xfmt.set_powerlimits((-3, 3))
         ax.yaxis.set_major_formatter(xfmt)
         ax.yaxis.major.formatter._useMathText = True
+        
         # NOTE: User can change the x and y limits here
-        plt.ylim(
-            0,
-        )
+        plt.ylim(0,1.25e-09)
+        
         # Save the figure
         # NOTE: User can change the filename
         plt.savefig(
