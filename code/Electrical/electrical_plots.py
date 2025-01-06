@@ -763,10 +763,10 @@ class OutputCurve:
             num_of_annotate (int): number of plots to annotate (starting from the last one or the one with lowest V_G (i.e. -80V))
         """
         # Find all the columns with "DrainV("", and then plot them all
-        num_of_output_curves = 10
+        num_of_output_curves = 1
         for column in self.data.columns:
             if "DrainV(" in column:
-                num_of_output_curves += 10
+                num_of_output_curves += 1
         # Check if there are enough colors
         assert (
             len(color_order) >= num_of_output_curves
