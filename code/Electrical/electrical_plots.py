@@ -822,7 +822,7 @@ class OutputCurve:
         ax.yaxis.major.formatter._useMathText = True
         # NOTE: User can change the x and y limits here
         plt.ylim(
-            0,1.25e-09
+            0.5e-09,1.25e-09
         )
         # Save the figure
         # NOTE: User can change the filename
